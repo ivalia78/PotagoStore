@@ -2,6 +2,19 @@ import streamlit as st
 from datetime import datetime, date
 import pandas as pd
 
+def save_data(data):
+    st.session_state.data = data
+    
+def app():
+    local_css()
+
+    if "data" not in st.session_state:
+        st.session_state.data = {
+            "next_id": 1,
+            "jurnal_umum": []
+        }
+    # lanjutkan kode aplikasi seperti biasa...
+
 # --- Fungsi agregasi entri jurnal ---
 
 def agregasi_entri(entri_list):
@@ -215,8 +228,7 @@ def add_order_jurnal(order):
         ]
     }
     data["jurnal_umum"].append(jurnal_entry)
-    save_data(data)
-
+    save_data(data)  # simpan kembali ke session_state
 
 def tambah_jurnal_baru(data):
     st.subheader("Tambah Jurnal Umum Baru")
