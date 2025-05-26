@@ -152,7 +152,6 @@ for key, default in {
     "users": [],
     "orders": [],
     "feedbacks": [],
-    "data": load_data(),
     "step": 0,
     "email": "",
     "username": "",
