@@ -9,11 +9,10 @@ def app():
     local_css()
 
     if "data" not in st.session_state:
-        st.session_state.data = {
-            "next_id": 1,
-            "jurnal_umum": []
-        }
-    # lanjutkan kode aplikasi seperti biasa...
+        st.session_state.data = {"next_id": 1, "jurnal_umum": []}
+
+    # contoh penggunaan st.session_state.data
+    data = st.session_state.data
 
 # --- Fungsi agregasi entri jurnal ---
 
